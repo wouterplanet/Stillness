@@ -10,6 +10,8 @@ Built for stillness. Open it when the day feels loud.
 
 > **[✦ Enter Stillness →](https://LadyNaggaga.github.io/Stillness/)**
 
+<img width="1145" height="667" alt="image" src="https://github.com/user-attachments/assets/4eb2074a-fea4-46c8-9665-94f887206ab2" />
+
 ![HTML5](https://img.shields.io/badge/HTML5-Canvas-orange)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow)
 ![Paper.js](https://img.shields.io/badge/Paper.js-Vector%20Engine-blue)
