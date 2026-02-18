@@ -12,6 +12,7 @@ import { genKente } from './kente.js';
 import { genSashiko } from './sashiko.js';
 import { genPaisley } from './paisley.js';
 import { genSpace } from './space.js';
+import { genZodiac } from './zodiac.js';
 
 export { PAT_NAMES } from '../state.js';
 
@@ -30,4 +31,5 @@ export const generators = [
   genSashiko,
   genPaisley,
   genSpace,
+  genZodiac,
 ];
