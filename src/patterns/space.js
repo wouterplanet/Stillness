@@ -92,15 +92,21 @@ export function genSpace() {
     } else {
       // Add crescent moon next to planet
       const moonDist = planetRad + 16;
-      const moonAngle = angle + da / 2 + 15;
+      const moonOffsetAngle = 15; // degrees offset from planet position
+      const moonAngle = angle + moonOffsetAngle; // angle already includes offset
       const mx = px + moonDist * Math.cos(moonAngle * R);
       const my = py + moonDist * Math.sin(moonAngle * R);
       const moonRad = 8;
       
+      // Crescent moon: overlapping circles create the crescent shape
+      const shadowOffsetX = 4;
+      const shadowOffsetY = -2;
+      const shadowSizeRatio = 0.7;
+      
       // Full moon disc
       sty(new paper.Path.Circle([mx, my], moonRad));
-      // Shadow disc to create crescent
-      sty(new paper.Path.Circle([mx + 4, my - 2], moonRad * 0.7));
+      // Shadow disc overlaps to create crescent effect
+      sty(new paper.Path.Circle([mx + shadowOffsetX, my + shadowOffsetY], moonRad * shadowSizeRatio));
     }
   }
   
