@@ -42,7 +42,7 @@ export function setPalette(colors) {
 
 export const PAT_NAMES = [
   'Mandala','Floral','Geometric','Zentangle','Ocean','Elephant',
-  'Butterfly','Celestial','Garden','Mosaic','Kente','Sashiko','Paisley'
+  'Butterfly','Celestial','Garden','Mosaic','Kente','Sashiko','Paisley','Space'
 ];
 
 export const SND_NAMES = ['Chimes','Wind','Birds','Ocean','Rain','Crystal','Harp','Zen Bowl'];

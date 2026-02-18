@@ -11,6 +11,7 @@ import { genMosaic } from './mosaic.js';
 import { genKente } from './kente.js';
 import { genSashiko } from './sashiko.js';
 import { genPaisley } from './paisley.js';
+import { genSpace } from './space.js';
 
 export { PAT_NAMES } from '../state.js';
 
@@ -28,4 +29,5 @@ export const generators = [
   genKente,
   genSashiko,
   genPaisley,
+  genSpace,
 ];
