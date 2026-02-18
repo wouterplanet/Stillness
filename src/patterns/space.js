@@ -91,22 +91,23 @@ export function genSpace() {
       ringSegment(px, py, planetRad + 3, planetRad + 8, 160, 380);
     } else {
       // Add crescent moon orbiting the planet
-      const moonDist = planetRad + 16; // distance from planet center
-      const moonLocalAngle = 45; // fixed angle around planet (degrees)
+      const MOON_DISTANCE = planetRad + 16; // distance from planet center
+      const MOON_LOCAL_ANGLE = 45; // degrees (will be converted to radians with R)
+      const MOON_RADIUS = 8;
+      
       // Position moon at local angle relative to planet
-      const mx = px + moonDist * Math.cos(moonLocalAngle * R);
-      const my = py + moonDist * Math.sin(moonLocalAngle * R);
-      const moonRad = 8;
+      const mx = px + MOON_DISTANCE * Math.cos(MOON_LOCAL_ANGLE * R);
+      const my = py + MOON_DISTANCE * Math.sin(MOON_LOCAL_ANGLE * R);
       
       // Crescent moon: overlapping circles create the crescent shape
-      const shadowOffsetX = 4;
-      const shadowOffsetY = -2;
-      const shadowSizeRatio = 0.7;
+      const MOON_SHADOW_OFFSET_X = 4;
+      const MOON_SHADOW_OFFSET_Y = -2;
+      const MOON_SHADOW_SIZE_RATIO = 0.7;
       
       // Full moon disc
-      sty(new paper.Path.Circle([mx, my], moonRad));
+      sty(new paper.Path.Circle([mx, my], MOON_RADIUS));
       // Shadow disc overlaps to create crescent effect
-      sty(new paper.Path.Circle([mx + shadowOffsetX, my + shadowOffsetY], moonRad * shadowSizeRatio));
+      sty(new paper.Path.Circle([mx + MOON_SHADOW_OFFSET_X, my + MOON_SHADOW_OFFSET_Y], MOON_RADIUS * MOON_SHADOW_SIZE_RATIO));
     }
   }
   
