@@ -90,12 +90,12 @@ export function genSpace() {
     if (i % 2 === 0) {
       ringSegment(px, py, planetRad + 3, planetRad + 8, 160, 380);
     } else {
-      // Add crescent moon next to planet
-      const moonDist = planetRad + 16;
-      const moonOffsetAngle = 15; // degrees offset from planet position
-      const moonAngle = angle + moonOffsetAngle; // angle already includes offset
-      const mx = px + moonDist * Math.cos(moonAngle * R);
-      const my = py + moonDist * Math.sin(moonAngle * R);
+      // Add crescent moon orbiting the planet
+      const moonDist = planetRad + 16; // distance from planet center
+      const moonLocalAngle = 45; // fixed angle around planet (degrees)
+      // Position moon at local angle relative to planet
+      const mx = px + moonDist * Math.cos(moonLocalAngle * R);
+      const my = py + moonDist * Math.sin(moonLocalAngle * R);
       const moonRad = 8;
       
       // Crescent moon: overlapping circles create the crescent shape
