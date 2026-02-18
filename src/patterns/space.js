@@ -104,18 +104,18 @@ export function genSpace() {
   }
 
   /* ── space station (upper-left) ── */
-  const stx = 150, sty = 120;
+  const stx = 150, sty2 = 120;
   // central hub
-  sty(new paper.Path.Circle([stx, sty], 25));
-  sty(new paper.Path.Circle([stx, sty], 15));
+  sty(new paper.Path.Circle([stx, sty2], 25));
+  sty(new paper.Path.Circle([stx, sty2], 15));
   // modules at cardinal directions
   for (let i = 0; i < 4; i++) {
     const a = i * 90;
     const mx = stx + 40 * Math.cos(a * R);
-    const my = sty + 40 * Math.sin(a * R);
+    const my = sty2 + 40 * Math.sin(a * R);
     sty(new paper.Path.Rectangle([mx - 12, my - 10], [24, 20]));
     // connecting arms
-    ringSegment(stx, sty, 25, 40, a - 3, a + 3);
+    ringSegment(stx, sty2, 25, 40, a - 3, a + 3);
     // windows on modules
     for (let w = 0; w < 2; w++) {
       sty(new paper.Path.Circle([mx - 6 + w * 12, my], 3));
@@ -124,7 +124,7 @@ export function genSpace() {
   // solar panels
   for (let i = 0; i < 2; i++) {
     const px = stx + (i === 0 ? -70 : 70);
-    const py = sty;
+    const py = sty2;
     // panel segments
     for (let s = 0; s < 6; s++) {
       sty(new paper.Path.Rectangle([px - 8, py - 18 + s * 6], [16, 5]));
