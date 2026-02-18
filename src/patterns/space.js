@@ -86,9 +86,27 @@ export function genSpace() {
       }));
     }
     
-    // Rings around alternating planets
+    // Rings around alternating planets, moons on others
     if (i % 2 === 0) {
       ringSegment(px, py, planetRad + 3, planetRad + 8, 160, 380);
+    } else {
+      // Add crescent moon orbiting the planet
+      const moonDist = planetRad + 16; // distance from planet center
+      const moonLocalAngle = 45; // fixed angle around planet (degrees)
+      // Position moon at local angle relative to planet
+      const mx = px + moonDist * Math.cos(moonLocalAngle * R);
+      const my = py + moonDist * Math.sin(moonLocalAngle * R);
+      const moonRad = 8;
+      
+      // Crescent moon: overlapping circles create the crescent shape
+      const shadowOffsetX = 4;
+      const shadowOffsetY = -2;
+      const shadowSizeRatio = 0.7;
+      
+      // Full moon disc
+      sty(new paper.Path.Circle([mx, my], moonRad));
+      // Shadow disc overlaps to create crescent effect
+      sty(new paper.Path.Circle([mx + shadowOffsetX, my + shadowOffsetY], moonRad * shadowSizeRatio));
     }
   }
   
